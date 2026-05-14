@@ -3,9 +3,9 @@ import read from "./reader.js";
 
 export class GameSavingLoader {
   static load() {
-    return read().then(data => {
-      return json(data)
-    })
+    return read()
+      .then((data) => json(data))
+      .then((value) => JSON.parse(value));
   }
 }
 
